@@ -12,10 +12,14 @@ const Footer = () => {
             <Logo />
             <div className='flex gap-5 mt-5'>
                 <span className='text-3xl bg-slate-800 rounded-lg p-3'>
-                    <FaXTwitter />
+                    <a href='https://x.com/pickMVP_'>
+                        <FaXTwitter />
+                    </a>
                 </span>
                 <span className='text-3xl bg-slate-800 rounded-lg p-3'>
-                    <FaInstagram />
+                    <a href='https://www.instagram.com/pickmvp_'>
+                        <FaInstagram />
+                    </a>
                 </span>
                 <span className='text-3xl bg-slate-800 rounded-lg p-3'>
                     <FaYoutube />
