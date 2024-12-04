@@ -29,8 +29,8 @@ const NflPage = async () => {
                 {
                     livePicks.length ? 
                     livePicks.slice(0,3).map((pick) => (
-                        <div className='w-full md:w-1/2 lg:w-1/3 px-5 mb-5'>
-                            <PickCard pick={pick} key={pick.id}/>
+                        <div key={pick.id} className='w-full md:w-1/2 lg:w-1/3 px-5 mb-5'>
+                            <PickCard pick={pick} />
                         </div>
                     ))
                     :

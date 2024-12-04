@@ -18,7 +18,7 @@ const PicksPage = async () => {
             <div className='flex flex-wrap'>
                 {
                     livePicks.map((pick) => (
-                      <div className='w-full md:w-1/2 lg:w-1/3 px-5 mb-5'>
+                      <div key={pick.id} className='w-full md:w-1/2 lg:w-1/3 px-5 mb-5'>
                         <PickCard pick={pick} />
                       </div>
                     ))
