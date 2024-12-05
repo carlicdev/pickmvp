@@ -70,7 +70,7 @@ const PostDetail = ({post}) => {
       };
 
   return (
-    <div className='card mb-10 shadow'>
+    <div className='card shadow'>
         <img src={post.featuredImage.url} alt='postImg' className='w-full h-[400px]  mb-4'/>
         <div className='p-5'>
             <h2 className='text-center text-4xl lg:text-5xl font-black mb-5 text-special capitalize'>{post.title}</h2>

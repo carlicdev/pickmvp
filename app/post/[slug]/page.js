@@ -1,4 +1,5 @@
 
+import AuthorCard from '@/app/components/AuthorCard';
 import LastPicks from '@/app/components/LastPicks';
 import PostDetail from '@/app/components/PostDetail';
 import Subscribe from '@/app/components/Subscribe';
@@ -11,12 +12,12 @@ const PostPage = async ({params}) => {
     const post = await getPostDetails(slug)
 
   return (
-    <div className='max-w-7xl mx-auto w-full pt-[50px] '>
+    <div className='max-w-7xl mx-auto w-full pt-[50px] mb-10'>
         <div className=' w-full grid grid-cols-10 gap-4'>
             <div className='hidden'>
                 
             </div>
-            <div className='col-span-10 lg:col-span-7 flex flex-col'>
+            <div className='col-span-10 lg:col-span-7 flex flex-col gap-5'>
                 {post && <PostDetail post={post}/> }
             </div>
             <div className='col-span-10 lg:col-span-3'>

@@ -23,9 +23,6 @@ const Navbar = () => {
                   <Link href={'/picks'}>
                     <p className='font-bold text-gray-200 text-lg hover:text-orange-700'>Picks</p>
                   </Link>
-                  <Link href={'/news'}>
-                    <p className='font-bold text-gray-200 text-lg hover:text-orange-700'>Noticias</p>
-                  </Link>
                 </div>
             </div>
 
@@ -68,9 +65,6 @@ const Navbar = () => {
                             </Link>
                             <Link href='/picks' onClick={() => setIsOpen(!isOpen)}>
                                 <p className='font-black text-3xl mb-5 mx-auto'>Picks</p>
-                            </Link>
-                            <Link href='/news' onClick={() => setIsOpen(!isOpen)}>
-                                <p className='font-black text-3xl mb-5 mx-auto'>Noticias</p>
                             </Link>
                         </div>
                     </div>
