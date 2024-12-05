@@ -12,7 +12,7 @@ const PickCard = ({pick}) => {
                 <span className='text-orange-700 text-xl'>{pick.category.title === 'NBA' ? <FaBasketballBall/> : <FaFootballBall/> }</span>
                 <p className='ml-0 mr-auto font-bold text-gray-200'>{pick.category.title}</p>
             </div>
-            <p className='mr-0 ml-auto text-sm font-bold'>{styleTime(pick.date)}</p>
+            <p className='mr-0 ml-auto text-sm font-bold capitalize'>{styleTime(pick.date)}</p>
         </div>
         <div className='w-full p-5 '>
             <div className='flex'>
