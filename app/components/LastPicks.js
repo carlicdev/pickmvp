@@ -1,9 +1,9 @@
 import React from 'react'
-import { getPicks } from '../services/graphql'
+import { getLivePicks } from '../services/graphql'
 import PickCard from './PickCard';
 
 const LastPicks = async () => {
-    const picks = await getPicks();
+    const picks = await getLivePicks();
 
   return (
     <>
