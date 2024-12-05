@@ -50,7 +50,7 @@ const PostDetail = ({post}) => {
           case 'heading-two':
             return <h2 key={index} className="text-4xl text-special font-black mb-4 mt-10">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h2>;
           case 'paragraph':
-            return <p key={index} className="my-4 text-justify tracking-wide text-lg">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
+            return <p key={index} className="my-4 lg:text-justify tracking-wide text-lg">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
           case 'heading-four':
             return <h4 key={index} className="text-2xl font-black text-special mb-4 mt-14 capitalize">{modifiedText.map((item, i) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
           case 'image':

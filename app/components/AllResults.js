@@ -1,6 +1,7 @@
 import React from 'react'
 import styleDate from '../utils/date'
 import { FaStar, FaRegCircleCheck, FaRegCircleXmark } from 'react-icons/fa6'
+import shortDate from '../utils/shortDate'
 
 const AllResults = ({picks}) => {
   return (
@@ -24,8 +25,11 @@ const AllResults = ({picks}) => {
       <div className='col-span-3 text-center border-r border-gray-200'>
         Fecha
       </div>
-      <div className='col-span-1 text-center '>
+      <div className='hidden lg:block col-span-1 text-center '>
         Resultado
+      </div>
+      <div className='lg:hidden col-span-1 text-center '>
+        W/L
       </div>
     </div>
 
@@ -58,7 +62,7 @@ const AllResults = ({picks}) => {
                     {pick.match}
                 </div>
                 <div className='col-span-3 text-center border-r border-gray-200'>
-                    {styleDate(pick.date)}
+                    {shortDate(pick.date)}
                 </div>
                 <div className='col-span-1 flex items-center justify-center '>
                     {

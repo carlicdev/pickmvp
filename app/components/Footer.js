@@ -11,12 +11,12 @@ const Footer = () => {
         <div className='flex flex-col p-10 justify-center items-center'>
             <Logo />
             <div className='flex gap-5 mt-5'>
-                <span className='text-3xl bg-slate-800 rounded-lg p-3'>
+                <span className='text-3xl bg-slate-800 hover:bg-black rounded-lg p-3'>
                     <a href='https://x.com/pickMVP_'>
                         <FaXTwitter />
                     </a>
                 </span>
-                <span className='text-3xl bg-slate-800 rounded-lg p-3'>
+                <span className='text-3xl bg-slate-800 hover:bg-black rounded-lg p-3'>
                     <a href='https://www.instagram.com/pickmvp_'>
                         <FaInstagram />
                     </a>
