@@ -5,7 +5,7 @@ import shortDate from '../utils/shortDate'
 
 const AllResults = ({picks}) => {
   return (
-<div className='w-full card shadow'>
+<div className='w-full card shadow text-sm lg:text-base'>
     <div className='bg-slate-900 text-gray-200 font-bold grid grid-cols-12 py-2 border-b-4 border-orange-700'>
         <div className='col-span-2 text-center border-r border-gray-200 '>
         Pick
