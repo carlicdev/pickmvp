@@ -49,7 +49,7 @@ const OverallRecord = ({nbaPicks, nflPicks}) => {
         {nflLosses.length}
       </div>
       <div className='col-span-2 text-center border-r border-gray-200'>
-        {nflWins.length / nflPicks.length * 100}%
+        {(nflWins.length / nflPicks.length * 100).toFixed(2)}%
       </div>
       <div className='col-span-2 text-center '>
         {nflUnits > 0 ? '+' : ''}{nflUnits.toFixed(2)}
@@ -67,7 +67,7 @@ const OverallRecord = ({nbaPicks, nflPicks}) => {
         {nbaLosses.length}
       </div>
       <div className='col-span-2 text-center border-r border-gray-200'>
-        {nbaWins.length / nbaPicks.length * 100}%
+        {(nbaWins.length / nbaPicks.length * 100).toFixed(2)}%
       </div>
       <div className='col-span-2 text-center '>
         {nbaUnits > 0 ? '+' : ''}{nbaUnits.toFixed(2)}

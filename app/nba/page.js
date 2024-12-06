@@ -3,11 +3,10 @@ import Logo from '../components/Logo'
 import PickCard from '../components/PickCard'
 import PostList from '../components/PostList'
 import Subscribe from '../components/Subscribe'
-import { getNbaPicks, getNbaPosts, getLiveNbaPicks } from '../services/graphql'
+import { getNbaPosts, getLiveNbaPicks } from '../services/graphql'
 
 const NbaPage = async () => {
     const livePicks = await getLiveNbaPicks();
-    const picks = await getNbaPicks();
     const posts = await getNbaPosts();
     
   return (

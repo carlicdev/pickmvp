@@ -1,13 +1,11 @@
 import React from 'react'
 import Logo from '../components/Logo'
 import PostList from '../components/PostList'
-import LastPicks from '../components/LastPicks'
 import Subscribe from '../components/Subscribe'
-import { getNflPicks, getNflPosts, getLiveNflPicks } from '../services/graphql'
+import { getNflPosts, getLiveNflPicks } from '../services/graphql'
 import PickCard from '../components/PickCard'
 
 const NflPage = async () => {
-    const picks = await getNflPicks();
     const posts = await getNflPosts();
     const livePicks = await getLiveNflPicks();
 

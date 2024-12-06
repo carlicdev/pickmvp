@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPicks = async () => {
   const query = gql`
       query Assets {
-        picks {
+        picks (last: 50) {
             id
             match
             selection

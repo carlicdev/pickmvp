@@ -1,5 +1,4 @@
-import React from 'react'
-import styleDate from '../utils/date'
+
 import { FaStar, FaRegCircleCheck, FaRegCircleXmark } from 'react-icons/fa6'
 import shortDate from '../utils/shortDate'
 
