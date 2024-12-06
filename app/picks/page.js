@@ -1,8 +1,8 @@
-import React from 'react'
+
 import PickCard from '../components/PickCard'
-import { getPicks } from '../services/graphql'
 import OverallRecord from '../components/OverallRecord';
 import AllResults from '../components/AllResults';
+import { getPicks } from '../services/graphql'
 
 const PicksPage = async () => {
   const picks = await getPicks();
@@ -12,7 +12,6 @@ const PicksPage = async () => {
   const settledNbaPicks = settledPicks.filter((pick) => pick.category.title === 'NBA');
   const settledNflPicks = settledPicks.filter((pick) => pick.category.title === 'NFL');
 
-  console.log({picks})
   return (
     <>
         <div className="max-w-7xl mx-auto">
