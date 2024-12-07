@@ -4,6 +4,7 @@ import { TbPointFilled } from 'react-icons/tb'
 import { FaCalendarAlt } from "react-icons/fa";
 import Link from 'next/link';
 import Image from 'next/image';
+import ShareButtons from './ShareButtons';
 
 const PostDetail = ({post}) => {
 
@@ -95,6 +96,11 @@ const PostDetail = ({post}) => {
                     })
                 }
             </div>
+            <ShareButtons 
+              url={`www.pickmvp.com/post/${post.slug}`} 
+              title={post.title}
+              summary={post.excerpt}
+            />
         </div>
     </div>
   )
