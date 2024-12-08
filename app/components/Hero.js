@@ -1,5 +1,4 @@
-import React from 'react'
-import Subscribe from './Subscribe'
+
 import SubscribeForm from './SubscribeForm'
 
 const Hero = () => {
