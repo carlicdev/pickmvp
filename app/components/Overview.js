@@ -12,7 +12,8 @@ const Overview = ({title, picks}) => {
     const totalUnits = getUnits(settledPicks);
     const betUnits = settledPicks.reduce((units, i) => units + (i.stars || 0), 0);
     const wonPicks = picks.filter((pick) => pick.result === 'W')
-    const winPercentage = (wonPicks.length / picks.length * 100).toFixed(2)
+    const lostPicks = picks.filter((pick) => pick.result === 'L')
+    const winPercentage = (wonPicks.length / settledPicks.length * 100).toFixed(2)
 
   return (
     <div className='card  border border-slate-200 rounded-lg'>
@@ -42,7 +43,7 @@ const Overview = ({title, picks}) => {
             </div>
             <div className='col-span-1 flex flex-col gap-1 p-5'>
                 <p>Picks Perdidos</p>
-                <p className='font-bold text-xl'>{picks.length - wonPicks.length}</p>
+                <p className='font-bold text-xl'>{lostPicks.length}</p>
             </div>
             <div className='col-span-1 flex flex-col gap-1 p-5'>
                 <p>Picks Totales</p>
