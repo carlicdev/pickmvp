@@ -21,7 +21,7 @@ const NflPage = async () => {
                 </div>
             </div>
         </div>
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-2 lg:px-0">
             <p className='text-4xl font-black my-10'>Últimos Picks</p>
             <div className='flex flex-wrap'>
                 {
@@ -36,7 +36,7 @@ const NflPage = async () => {
                 }
             </div>
         </div>
-        <div className="max-w-7xl mx-auto my-10">
+        <div className="max-w-7xl mx-auto my-10 px-2 lg:px-0">
             <p className='text-4xl font-black my-10'>Últimas Noticias</p>
             <div className='flex flex-wrap'>
                 <div className="w-full flex flex-wrap lg:w-2/3">

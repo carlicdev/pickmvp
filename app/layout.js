@@ -1,5 +1,5 @@
 import { Analytics } from '@vercel/analytics/react';
-import { Poppins, Inter, Londrina_Shadow } from "next/font/google";
+import { Poppins, Inter, Londrina_Shadow, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -21,6 +21,12 @@ const poppins = Poppins({
   variable: '--font-londrina',
  })
 
+ const rubik = Rubik({
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+  variable: '--font-rubik',
+})
+
 export const metadata = {
   title: "PickMVP",
   description: "Picks Y Noticias Deportivas",
@@ -30,7 +36,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${inter.variable} ${londrina.variable} antialiased`}
+        className={`${poppins.variable} ${inter.variable} ${londrina.variable} ${rubik.variable} antialiased`}
       >
         <Navbar />
         {children}

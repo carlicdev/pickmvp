@@ -1,12 +1,31 @@
 "use client"
 
 import { redirect } from 'next/navigation'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import { AiOutlineReload } from 'react-icons/ai'
 
 const SubscribeForm = ( ) => {
-    const [email, setEmail] = useState('')
-    const [error, setError] = useState(null)
+    const formRef = useRef()
+    const [isValid, setIsValid] = useState(true)
+    const [sending, setSending] = useState(false)
+    const [serverError, setServerError] = useState(null)
     const [success, setSuccess] = useState(false)
+    const [form, setForm] = useState({email: ''});
+
+    // Función para verificar el formato del correo electrónico
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    const handleChange = (e) => {
+        setServerError(null)
+        const { name, value } = e.target;
+        setForm({...form, [name]: value})
+        if (name === 'email') {
+            setIsValid(isValidEmail(value))
+        }
+    }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,21 +35,30 @@ const SubscribeForm = ( ) => {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
-                  email: email
+                  email: form.email
                 }) 
             })
     
             const data = await response.json();
-
+            if (data) setSending(false)
+            if (data.status === 400) setServerError(data.message)
             if (data.status === 200) { 
-              setEmail('')
               setSuccess(true)
             }
         } catch (err) {
-            console.log('error:', err)
+            setSending(false)
+            setServerError(err.message)
         }
         
     }
+
+
+    const buttonText = sending ?  <span className='flex items-center gap-2'><AiOutlineReload className='animate-spin'/>Registrando...</span> : <span>Suscríbete</span>
+
+    //mensaje de error si el correo no es válido
+    const errorMessage = !isValid ? (
+      <p className="mt-1 text-xs text-red-500">*Ingresa un correo electrónico válido.</p>
+    ) : null;
 
     if (success) {
         redirect('/confirmation')
@@ -38,25 +66,26 @@ const SubscribeForm = ( ) => {
     
   return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <form 
+            ref={formRef}            
+            onSubmit={handleSubmit} 
+            className='flex'
+        >
             <input
-                placeholder='Ingresa tu correo electrónico'
                 type='email'
                 name='email'
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className='w-full text-lg text-gray-900 outline-none focus:outline-slate-500  my-2 py-2 px-3 text-lg border border-gray-100 '
+                value={form.email}
+                onChange={handleChange}
+                className='bg-transparent lg:w-[400px] text-slate-200 px-2 border border-slate-500 rounded-l outline-none focus:outline-orange-700 '
             />
             <button 
                 type='submit'
-                className='shadow bg-orange-700 hover:bg-orange-800 text-2xl text-slate-100 w-full py-5 mt-4 mb-2 mx-auto text-lg'>
-                {!success ? 'Suscribirse' : 'Te Has Suscrito'}
+                className='bg-orange-700 px-7 py-4  shadow text-white text-xl rounded-r'>
+                {buttonText}
             </button>
         </form>
-        {error && (
-            <p className='text-red-500'>{error} </p>
-        )}
-
+        <span>{errorMessage}</span>
+        <p className='text-red-500'>{serverError}</p>
     </div>
   )
 }

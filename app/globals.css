@@ -15,6 +15,10 @@ body {
   font-family: var(--font-londrina);
 }
 
+.logo {
+  font-family: var(--font-rubik);
+}
+
 .animated-box {
   height: 0;
   overflow: hidden;

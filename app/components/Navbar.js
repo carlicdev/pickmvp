@@ -10,7 +10,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
   return (
     <div className='bg-slate-900 text-slate-100 w-full sticky top-0'>
-        <div className='max-w-7xl mx-auto py-4 flex items-center'>
+        <div className='max-w-7xl mx-auto py-4 flex items-center px-2 lg:px-0'>
             <div className='ml-0 mr-auto flex gap-20 items-center'>
                 <Logo />
                 <div className='hidden lg:flex gap-5'>
