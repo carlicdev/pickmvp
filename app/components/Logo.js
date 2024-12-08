@@ -8,7 +8,7 @@ const Logo = () => {
           <span className='text-orange-700 text-3xl'>
             <FaBullseye />
           </span>
-            <p className='text-3xl font-black tracking-tightest text-slate-100'>Pick<span className='text-slate-100'>MVP</span></p>
+            <p className='text-3xl font-black tracking-tightest text-slate-100'>PickMVP</p>
         </div>
     </Link>
   )
