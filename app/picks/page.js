@@ -1,38 +1,67 @@
 
-import PickCard from '../components/PickCard'
-import OverallRecord from '../components/OverallRecord';
 import AllResults from '../components/AllResults';
 import { getPicks } from '../services/graphql'
+import Overview from '../components/Overview';
+import Settled from '../components/Settled';
+import Active from '../components/Active';
+import CTABanner from '../components/CTABanner';
 
 const PicksPage = async () => {
   const picks = await getPicks();
 
+  const nflPicks = picks.filter((pick) => pick.category.title === 'NFL');
+  const nbaPicks = picks.filter((pick) => pick.category.title === 'NBA');
+
   const livePicks = picks.filter((pick) => pick.result === null);
   const settledPicks = picks.filter((pick) => pick.result !== null)
+
+  const liveNbaPicks = livePicks.filter((pick) => pick.category.title === 'NBA');
+  const liveNflPicks = livePicks.filter((pick) => pick.category.title === 'NFL');
+
   const settledNbaPicks = settledPicks.filter((pick) => pick.category.title === 'NBA');
   const settledNflPicks = settledPicks.filter((pick) => pick.category.title === 'NFL');
 
   return (
     <>
-        <div className="max-w-7xl mx-auto">
-            <p className='text-4xl font-black my-10'>Últimos Picks</p>
-            <div className='flex flex-wrap'>
-                {
-                    livePicks.map((pick) => (
-                      <div key={pick.id} className='w-full md:w-1/2 lg:w-1/3 px-5 mb-5'>
-                        <PickCard pick={pick} />
-                      </div>
-                    ))
-                }
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+            <Overview title='' picks={picks} />
+        </div>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+          <div className='flex flex-wrap'>
+            <div className='w-full lg:w-1/2 lg:pr-5'>          
+              <Active title='' picks={livePicks} />
             </div>
+            <div className='w-full lg:w-1/2 lg:pl-5 my-10 lg:my-0'>          
+              <Settled title='' picks={settledPicks} />
+            </div>
+          </div>
         </div>
-        <div className="max-w-7xl mx-auto my-10">
-            <p className='text-4xl font-black my-10'>Record Por Liga</p>
-            <OverallRecord nbaPicks={settledNbaPicks} nflPicks={settledNflPicks}/>
+        <CTABanner />
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+            <Overview title='NFL' picks={nflPicks} />
         </div>
-        <div className="max-w-7xl mx-auto my-10">
-            <p className='text-4xl font-black my-10'>Resultados</p>
-            <AllResults picks={settledPicks} />
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+          <div className='flex flex-wrap'>
+            <div className='w-full lg:w-1/2 lg:pr-5'>          
+              <Active title='NFL' picks={liveNflPicks} />
+            </div>
+            <div className='w-full lg:w-1/2 lg:pl-5 my-10 lg:my-0'>          
+              <Settled title='NFL' picks={settledNflPicks} />
+            </div>
+          </div>
+        </div>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+            <Overview title='NBA' picks={nbaPicks} />
+        </div>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+          <div className='flex flex-wrap'>
+            <div className='w-full lg:w-1/2 lg:pr-5'>          
+              <Active title='NBA' picks={liveNbaPicks} />
+            </div>
+            <div className='w-full lg:w-1/2 lg:pl-5 my-10 lg:my-0'>          
+              <Settled title='NBA' picks={settledNbaPicks} />
+            </div>
+          </div>
         </div>
     </>
   )

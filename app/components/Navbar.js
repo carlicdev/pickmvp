@@ -27,11 +27,11 @@ const Navbar = () => {
             </div>
 
             <div className='mr-0 ml-auto flex gap-4 items-center'>
-                <Link href={'#contact'}>
+                {/* <Link href={'#contact'}>
                     <button className='hidden lg:block px-7 py-3 bg-orange-700 hover:bg-orange-800 hover:scale-105  text-lg text-white'>
                         Contacto
                     </button>
-                </Link>
+                </Link> */}
                 <div 
                     onClick={() => setIsOpen(!isOpen)}
                     className='lg:hidden hover:scale-110 transition-all duration-300 text-3xl cursor-pointer '>
