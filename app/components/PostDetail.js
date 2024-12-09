@@ -5,6 +5,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import Link from 'next/link';
 import Image from 'next/image';
 import ShareButtons from './ShareButtons';
+import AuthorCard from './AuthorCard';
 
 const PostDetail = ({post}) => {
 
@@ -71,6 +72,7 @@ const PostDetail = ({post}) => {
       };
 
   return (
+    <>
     <div className='card shadow'>
         <img src={post.featuredImage.url} alt='postImg' className='w-full h-[400px]  mb-4'/>
         <div className='p-5'>
@@ -103,6 +105,8 @@ const PostDetail = ({post}) => {
             />
         </div>
     </div>
+    <AuthorCard />
+    </>
   )
 }
 
