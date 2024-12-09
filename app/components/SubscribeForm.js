@@ -65,22 +65,22 @@ const SubscribeForm = ( ) => {
     }
     
   return (
-    <div>
+    <div className='p-2 lg:p-0'>
         <form 
             ref={formRef}            
             onSubmit={handleSubmit} 
-            className='flex'
+            className='flex flex-wrap'
         >
             <input
                 type='email'
                 name='email'
                 value={form.email}
                 onChange={handleChange}
-                className='bg-transparent lg:w-[400px] text-slate-200 px-2 border border-slate-500 rounded-l outline-none focus:outline-orange-700 '
+                className='bg-transparent w-full lg:w-[400px] text-slate-200 px-2 py-2 lg:py-0 border border-slate-500 rounded-l outline-none focus:outline-orange-700 '
             />
             <button 
                 type='submit'
-                className='bg-orange-700 px-7 py-4  shadow text-white text-xl rounded-r'>
+                className='bg-orange-700 w-full lg:w-auto px-7 py-4 mt-1 lg:mt-0 shadow text-white text-xl lg:rounded-r'>
                 {buttonText}
             </button>
         </form>
