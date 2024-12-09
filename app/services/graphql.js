@@ -14,6 +14,9 @@ export const getPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -38,6 +41,9 @@ export const getLivePicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -62,6 +68,9 @@ export const getSettledPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -86,6 +95,9 @@ export const getNbaPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -110,6 +122,9 @@ export const getLiveNbaPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -134,6 +149,9 @@ export const getSettledNbaPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -158,6 +176,9 @@ export const getNflPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -182,6 +203,9 @@ export const getLiveNflPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }
@@ -206,6 +230,9 @@ export const getSettledNflPicks = async () => {
             type
             stars
             odds
+            author {
+              name
+            }
             category {
               title
             }

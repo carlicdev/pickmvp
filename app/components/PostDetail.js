@@ -105,7 +105,7 @@ const PostDetail = ({post}) => {
             />
         </div>
     </div>
-    <AuthorCard />
+    <AuthorCard author={post.author}/>
     </>
   )
 }
