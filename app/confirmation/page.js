@@ -11,7 +11,7 @@ const ConfirmationPage = () => {
             </div>
             <div className="p-5 flex flex-col gap-4">
               <p className='text-5xl font-black'>Gracias por suscribirte.</p>
-              <p className='text-lg'>Por favor, revisa tu bandeja de entrada para confirmar tu suscripción y empezar a recibir nuestros picks directamente en tu correo.</p>
+              <p className='text-lg'>Por favor, revisa tu bandeja de entrada para confirmar tu suscripción.</p>
               <p className='text-lg'>Si no encuentras nuestro correo de bienvenida, revisa tu carpeta de spam.</p>
               <div className='flex'>
                 <Link href='/'>
