@@ -1,4 +1,5 @@
 Todos
+[] add pagination
 [] create contact modal
 [] create blogpost about the model
 [] create an about page
