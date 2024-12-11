@@ -1,10 +1,10 @@
 
-import AllResults from '../components/AllResults';
 import { getPicks } from '../services/graphql'
 import Overview from '../components/Overview';
 import Settled from '../components/Settled';
 import Active from '../components/Active';
 import CTABanner from '../components/CTABanner';
+import MyLineChart from '../components/MyLineChart';
 
 const PicksPage = async () => {
   const picks = await getPicks();
@@ -29,12 +29,15 @@ const PicksPage = async () => {
         <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
           <div className='flex flex-wrap'>
             <div className='w-full lg:w-1/2 lg:pr-5'>          
-              <Active title='' picks={livePicks} />
+              <MyLineChart picks={settledPicks}/> 
             </div>
             <div className='w-full lg:w-1/2 lg:pl-5 my-10 lg:my-0'>          
               <Settled title='' picks={settledPicks} />
             </div>
           </div>
+        </div>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+          <Active title='NFL' picks={livePicks} />
         </div>
         <CTABanner />
         <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>

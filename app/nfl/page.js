@@ -8,6 +8,7 @@ import Overview from '../components/Overview'
 import Active from '../components/Active'
 import Settled from '../components/Settled'
 import CTABanner from '../components/CTABanner'
+import MyLineChart from '../components/MyLineChart'
 
 const NflPage = async () => {
     const posts = await getNflPosts();
@@ -22,13 +23,16 @@ const NflPage = async () => {
         </div>
         <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
           <div className='flex flex-wrap'>
-            <div className='w-full lg:w-1/2 lg:pr-5'>          
-              <Active title='NFL' picks={livePicks} />
+            <div className='w-full lg:w-1/2 lg:pr-5'>
+              <MyLineChart picks={settledPicks}/> 
             </div>
             <div className='w-full lg:w-1/2 lg:pl-5 my-10 lg:my-0'>          
               <Settled title='NFL' picks={settledPicks} />
             </div>
           </div>
+        </div>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+          <Active title='NFL' picks={livePicks} />
         </div>
         <CTABanner />
         <div className="max-w-7xl mx-auto my-10 px-2 lg:px-0">
