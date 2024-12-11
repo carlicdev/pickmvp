@@ -3,6 +3,7 @@ import { Poppins, Inter, Londrina_Shadow, Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Sidebar from './components/Sidebar';
 
 const inter = Inter({ 
   subsets: ["latin"], 
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         className={`${poppins.variable} ${inter.variable} ${londrina.variable} ${rubik.variable} antialiased`}
       >
         <Navbar />
+        <Sidebar />
         {children}
         <Analytics />
         <Footer />
