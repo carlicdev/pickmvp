@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FaCalendarAlt, FaFootballBall, FaBasketballBall } from "react-icons/fa";
 
 const MoreArticles = ({posts}) => {
-    console.log(posts)
+    
   return (
     <div className='card max-w-7xl mx-auto my-5 flex'>
         <div className='w-full lg:w-1/2 p-5 flex flex-col gap-2'>
