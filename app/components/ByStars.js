@@ -2,7 +2,7 @@ import React from 'react'
 
 const ByStars = () => {
   return (
-    <div>ByStars</div>
+    <div className='card  border border-slate-200 rounded-lg'>ByStars</div>
   )
 }
 
