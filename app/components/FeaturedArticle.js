@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { FaCalendarAlt, FaFootballBall, FaBasketballBall } from "react-icons/fa";
 
 const FeaturedArticle = ({post}) => {
-    const { title, author, excerpt, featuredImage, category } = post.node
+    const { title, author, excerpt, featuredImage, category, slug } = post.node
   return (
     <div className='card max-w-7xl mx-auto p-5'>
         <div className='flex flex-wrap'>
@@ -15,7 +15,9 @@ const FeaturedArticle = ({post}) => {
                     <span className='text-orange-700 text-xl'>{category.title === 'NBA'? <FaBasketballBall/> : <FaFootballBall />}</span>
                     <p className='ml-0 mr-auto font-black text-orange-700'>{category.title}</p>
                 </div>
-                <p className='font-black text-5xl'>{title}</p>
+                <Link href={`/post/${slug}`}>
+                    <p className='font-black text-5xl hover:text-orange-700 capitalize'>{title}</p>
+                </Link>
                 <p>{author.name}</p>
                 <p>{excerpt}</p>
             </div>

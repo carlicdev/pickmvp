@@ -12,7 +12,9 @@ const MoreArticles = ({posts}) => {
                 <span className='text-orange-700 text-xl'>{posts[1].node.category.title === 'NBA'? <FaBasketballBall/> : <FaFootballBall />}</span>
                 <p className='ml-0 mr-auto font-black text-orange-700'>{posts[1].node.category.title}</p>
             </div>
-            <p className='text-xl font-black'>{posts[1].node.title}</p>
+            <Link href={`/post/${posts[1].node.slug}`}>
+                <p className='text-xl font-black hover:text-orange-700 capitalize'>{posts[1].node.title}</p>
+            </Link>
             <p>{posts[1].node.author.name}</p>
             <p>{posts[1].node.excerpt}</p>
         </div>
@@ -28,7 +30,9 @@ const MoreArticles = ({posts}) => {
                                 <span className='text-orange-700 text-lg'>{posts[1].node.category.title === 'NBA'? <FaBasketballBall/> : <FaFootballBall />}</span>
                                 <p className='ml-0 mr-auto font-black text-orange-700 text-md'>{posts[1].node.category.title}</p>
                             </div>
-                            <p className='text-lg font-black'>{post.node.title}</p>
+                            <Link href={`/post/${post.node.slug}`}>
+                                <p className='text-lg font-black hover:text-orange-700 capitalize'>{post.node.title}</p>
+                            </Link>
                             <p>{post.node.author.name}</p>
                         </div>
                     </div>
