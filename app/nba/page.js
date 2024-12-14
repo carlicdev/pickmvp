@@ -7,6 +7,8 @@ import Active from '../components/Active'
 import Settled from '../components/Settled'
 import CTABanner from '../components/CTABanner'
 import MyLineChart from '../components/MyLineChart'
+import WinningsGraph from '../components/WinningsGraph'
+import ByStars from '../components/ByStars'
 
 
 const NbaPage = async () => {
@@ -23,12 +25,15 @@ const NbaPage = async () => {
     <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
       <div className='flex flex-wrap'>
         <div className='w-full lg:w-1/2 lg:pr-5'>          
-          <MyLineChart picks={settledPicks}/>
+          <WinningsGraph picks={settledPicks}/>
         </div>
         <div className='w-full lg:w-1/2 lg:pl-5 my-10 lg:my-0'>          
           <Settled title='NBA' picks={settledPicks} />
         </div>
       </div>
+    </div>
+    <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+          <ByStars title='NBA' picks={settledPicks} />
     </div>
     <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
       <Active title='NBA' picks={livePicks} />
