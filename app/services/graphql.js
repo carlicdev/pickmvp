@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50) {
+        picks (last: 50, orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -59,7 +59,7 @@ export const getLivePicks = async () => {
 export const getSettledPicks = async () => {
   const query = gql`
       query Assets {
-        picks (where: {result_not: null}, last: 50) {
+        picks (where: {result_not: null}, last: 50, , orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -86,7 +86,7 @@ export const getSettledPicks = async () => {
 export const getNbaPicks = async () => {
   const query = gql`
       query Assets {
-        picks (where: {category: { title: "NBA" }}, last: 50) {
+        picks (where: {category: { title: "NBA" }}, last: 50, , orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -167,7 +167,7 @@ export const getSettledNbaPicks = async () => {
 export const getNflPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50, where: {category: { title: "NFL" }}) {
+        picks (last: 50, where: {category: { title: "NFL" }}, , orderBy: updatedAt_ASC) {
             id
             match
             selection
