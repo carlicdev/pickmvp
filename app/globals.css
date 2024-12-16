@@ -11,6 +11,10 @@ body {
   background-color: white;
 }
 
+.black-card {
+  background-color: black;
+}
+
 .special-text {
   font-family: var(--font-londrina);
 }

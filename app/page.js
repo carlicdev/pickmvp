@@ -6,6 +6,7 @@ import Subscribe from "./components/Subscribe";
 import LastPicks from "./components/LastPicks";
 import PostList from "./components/PostList";
 import { getPicks, getPosts } from "./services/graphql";
+import StreaksSection from "./components/StreaksSection";
 
 export default async function Home() {
   const posts = await getPosts();
@@ -14,6 +15,7 @@ export default async function Home() {
   return (
     <div>
       <Hero />
+      <StreaksSection />
       <div className="flex flex-wrap max-w-7xl mx-auto">
         <div className="order-2 lg:order-1 w-full flex flex-wrap lg:w-2/3">
           <PostList posts={posts} />
