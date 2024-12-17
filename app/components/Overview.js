@@ -13,7 +13,7 @@ const Overview = ({title, picks}) => {
     const betUnits = settledPicks.reduce((units, i) => units + (i.stars || 0), 0);
     const wonPicks = picks.filter((pick) => pick.result === 'W')
     const lostPicks = picks.filter((pick) => pick.result === 'L')
-    const winPercentage = (wonPicks.length / settledPicks.length * 100).toFixed(2)
+    const winPercentage = (wonPicks.length / (wonPicks.length + lostPicks.length) * 100).toFixed(2)
 
   return (
     <div className='card  border border-slate-200 rounded-lg'>

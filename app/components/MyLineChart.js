@@ -41,8 +41,10 @@ const MyLineChart = ({picks}) => {
   const chartData = reversedPicks.reduce((acc, obj) => {
     const lastValue = acc[acc.length - 1] || 0; // Último valor o 0 si el array está vacío
     const newValue = obj.result === "W"
-      ? Number((obj.stars / Math.abs(obj.odds) * 100).toFixed(2))
-      : -obj.stars;
+      ? Number((obj.stars / Math.abs(obj.odds) * 100).toFixed(2)) // Gana: cálculo positivo
+      : obj.result === "D"
+        ? 0 // Empate: 0
+        : -obj.stars; // Pierde: negativo
   
     acc.push(lastValue + newValue); // Acumulamos el valor
     return acc;

@@ -25,7 +25,7 @@ const PostCard = ({post}) => {
         <div className='flex my-5'>
           <Link href={`/post/${post.slug}`}>
             <button className='bg-orange-700 px-7 py-3 shadow text-white hover:bg-orange-800'>
-              Leer Artículo
+              Read More
             </button>
           </Link>
         </div>

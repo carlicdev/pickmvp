@@ -46,11 +46,11 @@ const styleTime = (date) => {
   };
 
   // Obtener la hora formateada
-  const formattedTime = new Intl.DateTimeFormat('es-ES', optionsTime).format(newDate);
+  const formattedTime = new Intl.DateTimeFormat('en-US', optionsTime).format(newDate);
 
   // Devolver "Hoy" si es el día actual, o el nombre del día si no lo es
   if (isToday) {
-    return `Hoy, ${formattedTime} CT`;
+    return `Today, ${formattedTime} CT`;
   } else {
     // Formatear con el día de la semana
     const optionsWithDay = {
@@ -60,7 +60,7 @@ const styleTime = (date) => {
       hour12: true,
       timeZone: 'America/Chicago'
     };
-    return `${new Intl.DateTimeFormat('es-ES', optionsWithDay).format(newDate)} CT`;
+    return `${new Intl.DateTimeFormat('en-US', optionsWithDay).format(newDate)} CT`;
   }
 };
 

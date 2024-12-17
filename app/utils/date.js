@@ -14,40 +14,40 @@ const getMonth = (month) => {
 
     switch (month) {
         case "01":
-            mes = 'Enero'
+            mes = 'Jan'
             break;
         case "02":
-            mes = 'Febrero'
+            mes = 'Feb'
             break;
         case "03":
-            mes = 'Marzo'
+            mes = 'Mar'
             break;
         case "04":
-            mes = 'Abril'
+            mes = 'Apr'
             break;
         case "05":
-            mes = 'Mayo'
+            mes = 'May'
             break;
         case "06":
-            mes = 'Junio'
+            mes = 'Jun'
             break;
         case "07":
-            mes = 'Julio'
+            mes = 'Jul'
             break;
         case "08":
-            mes = 'Agosto'
+            mes = 'Aug'
             break;
         case "09":
-            mes = 'Septiembre'
+            mes = 'Sep'
             break;
         case "10":
-            mes = 'Octubre'
+            mes = 'Oct'
             break;
         case "11":
-            mes = 'Noviembre'
+            mes = 'Nov'
             break;
         case "12":
-            mes = 'Diciembre'
+            mes = 'Dec'
             break;
     }
 

@@ -7,7 +7,7 @@ const Subscribe = () => {
     <div className='w-full flex flex-col shadow bg-white mb-5'>
         <div className='w-full flex bg-slate-900 text-slate-100 p-5 flex-col items-center gap-5'>
             <Logo/>
-            <p className='text-lg'>Recibe nuestras últimas selecciones directamente en tu correo.</p>
+            <p className='text-lg'>Get the latest picks directly in your email.</p>
         </div>
         <div className='w-full p-5'>
             <SubscribeForm />

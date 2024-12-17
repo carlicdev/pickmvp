@@ -36,7 +36,7 @@ const ByStars = ({title, picks}) => {
                     </div>
                     <div className='col-span-1 flex flex-col gap-1 p-5'>
                         <p>%</p>
-                        <p className='font-bold text-xl'>{(oneStarWins.length / oneStarPicks.length * 100).toFixed(0)}%</p>
+                        <p className='font-bold text-xl'>{(oneStarWins.length / (oneStarWins.length + oneStarLoses.length) * 100).toFixed(0)}%</p>
                     </div>
                 </div>
                 <div className=''>
@@ -63,7 +63,7 @@ const ByStars = ({title, picks}) => {
                     </div>
                     <div className='col-span-1 flex flex-col gap-1 p-5'>
                         <p>%</p>
-                        <p className='font-bold text-xl'>{(twoStarWins.length / twoStarPicks.length * 100).toFixed(0)}%</p>
+                        <p className='font-bold text-xl'>{(twoStarWins.length / (twoStarWins.length + twoStarLoses.length) * 100).toFixed(0)}%</p>
                     </div>
                 </div>
                 <div className=''>
@@ -93,7 +93,7 @@ const ByStars = ({title, picks}) => {
                     </div>
                     <div className='col-span-1 flex flex-col gap-1 p-5'>
                         <p>%</p>
-                        <p className='font-bold text-xl'>{(threeStarWins.length / threeStarPicks.length * 100).toFixed(0)}%</p>
+                        <p className='font-bold text-xl'>{(threeStarWins.length / (threeStarWins.length + threeStarLoses.length) * 100).toFixed(0)}%</p>
                     </div>
                 </div>
                 <div className=''>

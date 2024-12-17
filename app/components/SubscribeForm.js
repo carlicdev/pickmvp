@@ -53,11 +53,11 @@ const SubscribeForm = ( ) => {
     }
 
 
-    const buttonText = sending ?  <span className='flex items-center gap-2'><AiOutlineReload className='animate-spin'/>Registrando...</span> : <span>Suscríbete</span>
+    const buttonText = sending ?  <span className='flex items-center gap-2'><AiOutlineReload className='animate-spin'/>Registrando...</span> : <span>Subscribe</span>
 
     //mensaje de error si el correo no es válido
     const errorMessage = !isValid ? (
-      <p className="mt-1 text-xs text-red-500">*Ingresa un correo electrónico válido.</p>
+      <p className="mt-1 text-xs text-red-500">*Type a valid email.</p>
     ) : null;
 
     if (success) {
