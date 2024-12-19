@@ -18,7 +18,7 @@ const ByStars = ({title, picks}) => {
   return (
     <div className='card  border border-slate-200 rounded-lg'>
         <div className='flex p-5 bg-slate-900 text-slate-100 rounded-t-lg border-b-2 border-orange-700'>
-            <p className='font-black text-2xl'>{title} Por Unidades</p>
+            <p className='font-black text-2xl'>{title} By Stars</p>
         </div>
         <div className='grid grid-cols-1 lg:grid-cols-3 divide-x divide-y'>
             <div className='col-span-1 flex flex-col gap-1 p-5'>
