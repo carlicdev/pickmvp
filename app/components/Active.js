@@ -12,7 +12,7 @@ const Active = ({title, picks}) => {
             {
                 picks.length === 0 ? 
                 <div className='p-5'>
-                    <p>No hay picks activos.</p> 
+                    <p>No live picks.</p> 
                 </div>
                 : 
                 ''
