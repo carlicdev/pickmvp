@@ -13,7 +13,7 @@ const Streak = ({title, timelapse, data}) => {
         </div>
         <div className='flex px-15 justify-center w-full  mx-auto'>
             <div className='bg-black p-5 rounded-b-lg w-[200px]'>
-                <p className='font-black text-orange-700 text-2xl uppercase'>{timelapse}</p>
+                <p className='text-slate-100 text-lg capitalize'>{timelapse}</p>
             </div>
         </div>
     </div>
