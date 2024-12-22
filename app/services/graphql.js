@@ -5,7 +5,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50, orderBy: updatedAt_ASC) {
+        picks (last: 1000, orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -32,7 +32,7 @@ export const getPicks = async () => {
 export const getLivePicks = async () => {
   const query = gql`
       query Assets {
-        picks (where: {result: null}, last: 50) {
+        picks (where: {result: null}, last: 1000) {
             id
             match
             selection
@@ -59,7 +59,7 @@ export const getLivePicks = async () => {
 export const getSettledPicks = async () => {
   const query = gql`
       query Assets {
-        picks (where: {result_not: null}, last: 50, , orderBy: updatedAt_ASC) {
+        picks (where: {result_not: null}, last: 1000, , orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -86,7 +86,7 @@ export const getSettledPicks = async () => {
 export const getNbaPicks = async () => {
   const query = gql`
       query Assets {
-        picks (where: {category: { title: "NBA" }}, last: 50, , orderBy: updatedAt_ASC) {
+        picks (where: {category: { title: "NBA" }}, last: 1000, , orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -113,7 +113,7 @@ export const getNbaPicks = async () => {
 export const getLiveNbaPicks = async () => {
   const query = gql`
       query Assets {
-        picks (where: {category: { title: "NBA" }, result: null}, last: 50) {
+        picks (where: {category: { title: "NBA" }, result: null}, last: 1000) {
             id
             match
             selection
@@ -140,7 +140,7 @@ export const getLiveNbaPicks = async () => {
 export const getSettledNbaPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50, where: {category: { title: "NBA" }, result_not: null}) {
+        picks (last: 1000, where: {category: { title: "NBA" }, result_not: null}) {
             id
             match
             selection
@@ -167,7 +167,7 @@ export const getSettledNbaPicks = async () => {
 export const getNflPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50, where: {category: { title: "NFL" }}, , orderBy: updatedAt_ASC) {
+        picks (last: 1000, where: {category: { title: "NFL" }}, , orderBy: updatedAt_ASC) {
             id
             match
             selection
@@ -194,7 +194,7 @@ export const getNflPicks = async () => {
 export const getLiveNflPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50, where: {category: { title: "NFL" }, result: null}) {
+        picks (last: 1000, where: {category: { title: "NFL" }, result: null}) {
             id
             match
             selection
@@ -221,7 +221,7 @@ export const getLiveNflPicks = async () => {
 export const getSettledNflPicks = async () => {
   const query = gql`
       query Assets {
-        picks (last: 50, where: {category: { title: "NFL" }, result_not: null}) {
+        picks (last: 1000, where: {category: { title: "NFL" }, result_not: null}) {
             id
             match
             selection
