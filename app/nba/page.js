@@ -39,9 +39,7 @@ const NbaPage = async () => {
     <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
           <ByStars title='NBA' picks={settledPicks} />
     </div>
-    <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
-      <Active title='NBA' picks={livePicks} />
-    </div>
+
     <CTABanner />
         <div className="max-w-7xl mx-auto my-10 px-2 lg:px-0">
             <div className='flex flex-wrap'>
