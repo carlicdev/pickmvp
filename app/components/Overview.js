@@ -2,8 +2,13 @@ import React from 'react'
 
 const getUnits = (arr) => {
     return arr.reduce((units, i) => {
-        return i.result === 'W' ? units + (i.stars / Math.abs(i.odds) * 100) : units - i.stars ;
-    }, 0); 
+        if (i.result === 'D') {
+            return units; // No suma ni resta si el resultado es 'D'
+        }
+        return i.result === 'W' 
+            ? units + (i.stars / Math.abs(i.odds) * 100) 
+            : units - i.stars;
+    }, 0);
 };
 
 const Overview = ({title, picks}) => {

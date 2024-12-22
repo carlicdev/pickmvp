@@ -7,6 +7,7 @@ import CTABanner from '../components/CTABanner';
 import MyLineChart from '../components/MyLineChart';
 import ByStars from '../components/ByStars';
 import WinningsGraph from '../components/WinningsGraph';
+import PicksSection from '../components/PicksSection';
 
 const PicksPage = async () => {
   const picks = await getPicks();
@@ -25,6 +26,9 @@ const PicksPage = async () => {
 
   return (
     <>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
+            <PicksSection title='' picks={livePicks} />
+        </div>
         <div className='max-w-7xl mx-auto px-2 lg:px-0 my-10'>
             <Overview title='' picks={picks} />
         </div>

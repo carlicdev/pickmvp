@@ -9,6 +9,7 @@ import CTABanner from '../components/CTABanner'
 import MyLineChart from '../components/MyLineChart'
 import WinningsGraph from '../components/WinningsGraph'
 import ByStars from '../components/ByStars'
+import PicksSection from '../components/PicksSection'
 
 
 const NbaPage = async () => {
@@ -19,6 +20,9 @@ const NbaPage = async () => {
     
   return (
     <>
+    <div className='max-w-7xl mx-auto px-2 lg:px-0 mt-10'>
+        <PicksSection title='NBA' picks={livePicks} />
+    </div>
     <div className='max-w-7xl mx-auto px-2 lg:px-0 mt-10'>
         <Overview title='NBA' picks={picks} />
     </div>

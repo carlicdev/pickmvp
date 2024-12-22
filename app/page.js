@@ -7,15 +7,20 @@ import LastPicks from "./components/LastPicks";
 import PostList from "./components/PostList";
 import { getPicks, getPosts } from "./services/graphql";
 import StreaksSection from "./components/StreaksSection";
+import PicksSection from "./components/PicksSection";
 
 export default async function Home() {
   const posts = await getPosts();
   const picks = await getPicks();
+  const livePicks = picks.filter((pick) => pick.result === null); 
 
   return (
     <div>
       <Hero />
       <StreaksSection />
+      <div className='max-w-7xl mx-auto px-2 lg:px-0 mt-10'>
+        <PicksSection title='' picks={livePicks} />
+      </div>
       <div className="flex flex-wrap max-w-7xl mx-auto">
         <div className="order-2 lg:order-1 w-full flex flex-wrap lg:w-2/3">
           <PostList posts={posts} />

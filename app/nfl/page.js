@@ -11,6 +11,7 @@ import CTABanner from '../components/CTABanner'
 import MyLineChart from '../components/MyLineChart'
 import WinningsGraph from '../components/WinningsGraph'
 import ByStars from '../components/ByStars'
+import PicksSection from '../components/PicksSection'
 
 const NflPage = async () => {
     const posts = await getNflPosts();
@@ -20,6 +21,9 @@ const NflPage = async () => {
 
   return (
     <>
+        <div className='max-w-7xl mx-auto px-2 lg:px-0 mt-10'>
+            <PicksSection title='NFL' picks={livePicks} />
+        </div>
         <div className='max-w-7xl mx-auto px-2 lg:px-0 mt-10'>
             <Overview title='NFL' picks={picks} />
         </div>
