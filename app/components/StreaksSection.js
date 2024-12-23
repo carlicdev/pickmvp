@@ -10,7 +10,7 @@ const StreaksSection = () => {
           <div className='w-full lg:w-1/3 my-5 lg:my-0'>
           <Streak 
                 title={'all sports'}
-                data={'61%'}
+                data={'60%'}
                 timelapse={'Last 2 weeks'}
               />
           </div>
